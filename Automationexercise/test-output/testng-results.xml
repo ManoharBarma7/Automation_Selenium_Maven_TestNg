@@ -2,20 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-24T18:54:54Z" name="Default suite" finished-at="2024-04-24T18:55:12Z" duration-ms="17612">
+  <suite started-at="2024-04-27T13:29:46Z" name="Default suite" finished-at="2024-04-27T13:30:06Z" duration-ms="19892">
     <groups>
     </groups>
-    <test started-at="2024-04-24T18:54:54Z" name="Default test" finished-at="2024-04-24T18:55:12Z" duration-ms="17612">
-      <class name="automationexercise.TC09_Search_Product">
-        <test-method is-config="true" signature="start()[pri:0, instance:automationexercise.TC09_Search_Product@51cd7ffc]" started-at="2024-04-25T00:24:54Z" name="start" finished-at="2024-04-25T00:25:01Z" duration-ms="6705" status="PASS">
+    <test started-at="2024-04-27T13:29:46Z" name="Default test" finished-at="2024-04-27T13:30:06Z" duration-ms="19892">
+      <class name="automationexercise.TC10_Verify_Subscription_in_HomePage">
+        <test-method is-config="true" signature="start()[pri:0, instance:automationexercise.TC10_Verify_Subscription_in_HomePage@4cc6fa2a]" started-at="2024-04-27T18:59:46Z" name="start" finished-at="2024-04-27T18:59:55Z" duration-ms="9070" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method signature="Verify_All_Products()[pri:0, instance:automationexercise.TC09_Search_Product@51cd7ffc]" started-at="2024-04-25T00:25:01Z" name="Verify_All_Products" finished-at="2024-04-25T00:25:12Z" duration-ms="10878" status="PASS">
+        <test-method signature="Verify_Subscription()[pri:0, instance:automationexercise.TC10_Verify_Subscription_in_HomePage@4cc6fa2a]" started-at="2024-04-27T18:59:55Z" name="Verify_Subscription" finished-at="2024-04-27T19:00:01Z" duration-ms="6482" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Verify_All_Products -->
-      </class> <!-- automationexercise.TC09_Search_Product -->
+        </test-method> <!-- Verify_Subscription -->
+        <test-method is-config="true" signature="close()[pri:0, instance:automationexercise.TC10_Verify_Subscription_in_HomePage@4cc6fa2a]" started-at="2024-04-27T19:00:01Z" name="close" finished-at="2024-04-27T19:00:06Z" duration-ms="4305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- automationexercise.TC10_Verify_Subscription_in_HomePage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.Set;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -158,6 +159,7 @@ public class BasicUtility {
 	public void UploadFile(By Element, String filePath) {
 		WebElement fileInput = driver.findElement(Element);
 		fileInput.sendKeys(filePath);
+		
 	}
 
 	// For Elements Visibility
@@ -188,8 +190,17 @@ public class BasicUtility {
 	    softAssert.assertAll();
 	}
 
-
-	
+// For scroll till the element
+    public void scrollToElement(WebDriver driver, By element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",  driver.findElement(element));
+    }
+    
+ // For scroll till the element
+    public void scrollToBottom(WebDriver driver) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
 	
 	
 	

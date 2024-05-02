@@ -1,6 +1,7 @@
 package automationexercise;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -32,5 +33,12 @@ public class TC09_Search_Product implements Automationexercise_interface {
 		System.out.println("the product search results are fetched --> "
 				+ BUtility.findElementIsPresent(Product_Results_Elements));
 
+	}
+	
+	
+	@AfterTest
+	public void close() {
+		BUtility.sleepSeconds(3);
+		BUtility.quit();
 	}
 }
