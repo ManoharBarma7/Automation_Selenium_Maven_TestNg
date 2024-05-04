@@ -144,4 +144,25 @@ public interface Automationexercise_interface {
 	By Search_Element = By.cssSelector("button.btn.btn-default.btn-lg");
 	By Product_Results_Elements = By.xpath("//p[contains(text(),'"+Search_Text+"')]");
 	// ====================================================================== //
+	
+	
+	// From Here -- Verify Subscription in Home Page -- TestCase 10//
+	
+	By Subscription_Element = By.xpath("//*[text()=\"Subscription\"]");
+	String Email_Dummy= "Manohar000@gmail.com";
+	By Subscription_Box_Element = By.cssSelector("input#susbscribe_email");
+	By Subscription_Submit_Element = By.cssSelector("button#subscribe");
+	By Sub_Sucess_Element = By.cssSelector("div#success-subscribe");
+	
+	// ====================================================================== //
+	
+	
+	
+	// From Here -- Verify Subscription in Home Page -- TestCase 10//
+	// Note : Remaining Code used from TestCase 09
+	
+	By Cart_Button = By.xpath("//a[@href=\"/view_cart\"]");
+	By CartPage_Element = By.xpath("//*[text()='Cart is empty!']");
+	
+	// ====================================================================== //
 }

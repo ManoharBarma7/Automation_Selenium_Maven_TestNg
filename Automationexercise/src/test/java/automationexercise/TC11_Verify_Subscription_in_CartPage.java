@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class TC10_Verify_Subscription_in_HomePage implements Automationexercise_interface {
+public class TC11_Verify_Subscription_in_CartPage implements Automationexercise_interface {
 	BasicUtility BUtility = new BasicUtility();
 	SoftAssert softAssert = new SoftAssert();
 
@@ -23,6 +23,9 @@ public class TC10_Verify_Subscription_in_HomePage implements Automationexercise_
 		BUtility.driver.navigate().refresh();
 		Assert.assertEquals(BUtility.findElementIsPresent(Home_Page_Element), true);
 		System.out.println("Homepage visibility --> " + BUtility.findElementIsPresent(Home_Page_Element));
+		BUtility.click_Left(Cart_Button);
+		Assert.assertEquals(BUtility.findElementIsPresent(CartPage_Element), true);
+		System.out.println("Cartpage visibility --> " + BUtility.findElementIsPresent(CartPage_Element));
 		BUtility.scrollToBottom(BUtility.driver);
 		Assert.assertEquals(BUtility.findElementIsPresent(Subscription_Element), true);
 		System.out.println("Subscription visibility --> " + BUtility.findElementIsPresent(Subscription_Element));
