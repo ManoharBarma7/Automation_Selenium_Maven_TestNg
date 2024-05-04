@@ -14,7 +14,7 @@ public interface Automationexercise_interface {
 	// Login page element
 	By Login_Page_Element = By.xpath("//h2[text()='New User Signup!']");
 	By Signup_Email_Element = By.xpath("//input[@data-qa='signup-email']");
-	String Signup_Email = "Manohardhangar07@gmail.com";
+	String Signup_Email = "Manohardhangar707@gmail.com";
 	By Signup_Name = By.xpath("//input[@type='text']");
 	String Name = "Manohar";
 	By Singup_Submit = By.xpath("//*[@data-qa='signup-button']");
