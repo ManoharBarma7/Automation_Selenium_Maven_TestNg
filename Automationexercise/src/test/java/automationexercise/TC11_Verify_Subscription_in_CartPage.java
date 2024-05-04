@@ -33,7 +33,6 @@ public class TC11_Verify_Subscription_in_CartPage implements Automationexercise_
 		BUtility.click_Left(Subscription_Submit_Element);
 		Assert.assertEquals(BUtility.findElementIsPresent(Sub_Sucess_Element), true);
 		System.out.println("Success Message visibility --> " + BUtility.findElementIsPresent(Sub_Sucess_Element));
-
 	}
 
 	@AfterTest
