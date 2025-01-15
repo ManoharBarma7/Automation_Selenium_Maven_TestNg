@@ -1,0 +1,33 @@
+Function,Description,Command,Input_Data,Command_to_Run,Output
+sqrt(x),Square root of x,awk 'BEGIN { print sqrt(25) }',None,echo | awk 'BEGIN { print sqrt(25) }',5
+exp(x),Exponential of x,awk 'BEGIN { print exp(2) }',None,echo | awk 'BEGIN { print exp(2) }',7.389056
+log(x),Natural logarithm,awk 'BEGIN { print log(10) }',None,echo | awk 'BEGIN { print log(10) }',2.302585
+sin(x),Sine (radians),awk 'BEGIN { print sin(1) }',None,echo | awk 'BEGIN { print sin(1) }',0.841471
+cos(x),Cosine (radians),awk 'BEGIN { print cos(1) }',None,echo | awk 'BEGIN { print cos(1) }',0.540302
+int(x),Integer part,awk 'BEGIN { print int(5.9) }',None,echo | awk 'BEGIN { print int(5.9) }',5
+length(str),String length,awk '{ print length($0) }',Hello,echo "Hello" | awk '{ print length($0) }',5
+substr(str;pos;len),Extract substring,awk '{ print substr($0;1;3) }',Hello,echo "Hello" | awk '{ print substr($0;1;3) }',Hel
+toupper(str),Convert to uppercase,awk '{ print toupper($0) }',Hello,echo "Hello" | awk '{ print toupper($0) }',HELLO
+tolower(str),Convert to lowercase,awk '{ print tolower($0) }',HELLO,echo "HELLO" | awk '{ print tolower($0) }',hello
+index(str;sub),Find substring position,awk '{ print index($0;"lo") }',Hello,echo "Hello" | awk '{ print index($0;"lo") }',4
+split(str;arr;sep),Split string into array,awk '{ split($0;arr;","); print arr[1] }',a;b;c,echo "a;b;c" | awk '{ split($0;arr;","); print arr[1] }',a
+sub(regex;repl;str),Replace first match,awk '{ sub(/l/; "x"); print }',hello,echo "hello" | awk '{ sub(/l/; "x"); print }',hexlo
+gsub(regex;repl;str),Replace all matches,awk '{ gsub(/l/; "x"); print }',hello,echo "hello" | awk '{ gsub(/l/; "x"); print }',hexxo
+match(str;regex),Find regex match,awk '{ print match($0; /[0-9]+/) }',abc123def,echo "abc123def" | awk '{ print match($0; /[0-9]+/) }',4
+sprintf(fmt;expr),Format string,awk 'BEGIN { print sprintf("%.2f"; 3.14159) }',None,echo | awk 'BEGIN { print sprintf("%.2f"; 3.14159) }',3.14
+printf(fmt;expr),Print formatted,awk '{ printf "%.2f\n"; $1 }',3.14159,echo "3.14159" | awk '{ printf "%.2f\n"; $1 }',3.14
+systime(),Current timestamp,awk 'BEGIN { print systime() }',None,echo | awk 'BEGIN { print systime() }',1705306556
+strftime(fmt[;ts]),Format timestamp,awk 'BEGIN { print strftime("%Y-%m-%d") }',None,echo | awk 'BEGIN { print strftime("%Y-%m-%d") }',2025-01-15
+getline,Read next line,awk '{ getline; print }',line1\nline2,echo -e "line1\nline2" | awk '{ getline; print }',line2
+close(file),Close file/pipe,awk 'BEGIN {print "test" > "tmp"; close("tmp")}',None,Creates and closes file,None
+asort(arr),Sort array values,awk 'BEGIN {a[1]=3; a[2]=1; asort(a); print a[1]}',None,echo | awk 'BEGIN {a[1]=3; a[2]=1; asort(a); print a[1]}',1
+asorti(arr),Sort array indices,awk 'BEGIN {a["c"]=1; a["a"]=2; asorti(a;b); print b[1]}',None,echo | awk 'BEGIN {a["c"]=1; a["a"]=2; asorti(a;b); print b[1]}',a
+typeof(var),Get variable type,awk 'BEGIN { print typeof(42) }',None,echo | awk 'BEGIN { print typeof(42) }',number
+rand(),Random number (0-1),awk 'BEGIN { print rand() }',None,echo | awk 'BEGIN { print rand() }',0.237964
+srand([seed]),Set random seed,awk 'BEGIN { srand(1); print rand() }',None,echo | awk 'BEGIN { srand(1); print rand() }',0.237964
+and(x;y),Bitwise AND,awk 'BEGIN { print and(12;10) }',None,echo | awk 'BEGIN { print and(12;10) }',8
+or(x;y),Bitwise OR,awk 'BEGIN { print or(12;10) }',None,echo | awk 'BEGIN { print or(12;10) }',14
+xor(x;y),Bitwise XOR,awk 'BEGIN { print xor(12;10) }',None,echo | awk 'BEGIN { print xor(12;10) }',6
+compl(x),Bitwise NOT,awk 'BEGIN { print compl(12) }',None,echo | awk 'BEGIN { print compl(12) }',-13
+lshift(x;n),Left shift,awk 'BEGIN { print lshift(12;1) }',None,echo | awk 'BEGIN { print lshift(12;1) }',24
+rshift(x;n),Right shift,awk 'BEGIN { print rshift(12;1) }',None,echo | awk 'BEGIN { print rshift(12;1) }',6
