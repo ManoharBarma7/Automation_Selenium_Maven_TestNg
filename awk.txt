@@ -1,0 +1,224 @@
+Function: sqrt(x)
+
+Description: Square root of x
+Command: awk 'BEGIN { print sqrt(25) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print sqrt(25) }'
+Output: 5
+Function: exp(x)
+
+Description: Exponential of x
+Command: awk 'BEGIN { print exp(2) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print exp(2) }'
+Output: 7.389056
+Function: log(x)
+
+Description: Natural logarithm
+Command: awk 'BEGIN { print log(10) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print log(10) }'
+Output: 2.302585
+Function: sin(x)
+
+Description: Sine (radians)
+Command: awk 'BEGIN { print sin(1) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print sin(1) }'
+Output: 0.841471
+Function: cos(x)
+
+Description: Cosine (radians)
+Command: awk 'BEGIN { print cos(1) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print cos(1) }'
+Output: 0.540302
+Function: int(x)
+
+Description: Integer part
+Command: awk 'BEGIN { print int(5.9) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print int(5.9) }'
+Output: 5
+Function: length(str)
+
+Description: String length
+Command: awk '{ print length($0) }'
+Input_Data: Hello
+Command_to_Run: echo "Hello" | awk '{ print length($0) }'
+Output: 5
+Function: substr(str;pos;len)
+
+Description: Extract substring
+Command: awk '{ print substr($0,1,3) }'
+Input_Data: Hello
+Command_to_Run: echo "Hello" | awk '{ print substr($0,1,3) }'
+Output: Hel
+Function: toupper(str)
+
+Description: Convert to uppercase
+Command: awk '{ print toupper($0) }'
+Input_Data: Hello
+Command_to_Run: echo "Hello" | awk '{ print toupper($0) }'
+Output: HELLO
+Function: tolower(str)
+
+Description: Convert to lowercase
+Command: awk '{ print tolower($0) }'
+Input_Data: HELLO
+Command_to_Run: echo "HELLO" | awk '{ print tolower($0) }'
+Output: hello
+Function: index(str;sub)
+
+Description: Find substring position
+Command: awk '{ print index($0,"lo") }'
+Input_Data: Hello
+Command_to_Run: echo "Hello" | awk '{ print index($0,"lo") }'
+Output: 4
+Function: split(str;arr;sep)
+
+Description: Split string into array
+Command: awk '{ split($0,arr,";"); print arr[1] }'
+Input_Data: a;b;c
+Command_to_Run: echo "a;b;c" | awk '{ split($0,arr,";"); print arr[1] }'
+Output: a
+Function: sub(regex;repl;str)
+
+Description: Replace first match
+Command: awk '{ sub(/l/, "x"); print }'
+Input_Data: hello
+Command_to_Run: echo "hello" | awk '{ sub(/l/, "x"); print }'
+Output: hexlo
+Function: gsub(regex;repl;str)
+
+Description: Replace all matches
+Command: awk '{ gsub(/l/, "x"); print }'
+Input_Data: hello
+Command_to_Run: echo "hello" | awk '{ gsub(/l/, "x"); print }'
+Output: hexxo
+Function: match(str;regex)
+
+Description: Find regex match
+Command: awk '{ print match($0, /[0-9]+/) }'
+Input_Data: abc123def
+Command_to_Run: echo "abc123def" | awk '{ print match($0, /[0-9]+/) }'
+Output: 4
+Function: sprintf(fmt;expr)
+
+Description: Format string
+Command: awk 'BEGIN { print sprintf("%.2f", 3.14159) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print sprintf("%.2f", 3.14159) }'
+Output: 3.14
+Function: printf(fmt;expr)
+
+Description: Print formatted
+Command: awk '{ printf "%.2f\n", $1 }'
+Input_Data: 3.14159
+Command_to_Run: echo "3.14159" | awk '{ printf "%.2f\n", $1 }'
+Output: 3.14
+Function: systime()
+
+Description: Current timestamp
+Command: awk 'BEGIN { print systime() }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print systime() }'
+Output: 1705306556
+Function: strftime(fmt[;ts])
+
+Description: Format timestamp
+Command: awk 'BEGIN { print strftime("%Y-%m-%d") }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print strftime("%Y-%m-%d") }'
+Output: 2025-01-15
+Function: getline
+
+Description: Read next line
+Command: awk '{ getline; print }'
+Input_Data: line1\nline2
+Command_to_Run: echo -e "line1\nline2" | awk '{ getline; print }'
+Output: line2
+Function: close(file)
+
+Description: Close file/pipe
+Command: awk 'BEGIN {print "test" > "tmp"; close("tmp")}'
+Input_Data: None
+Command_to_Run: Creates and closes file
+Output: None
+Function: asort(arr)
+
+Description: Sort array values
+Command: awk 'BEGIN {a[1]=3; a[2]=1; asort(a); print a[1]}'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN {a[1]=3; a[2]=1; asort(a); print a[1]}'
+Output: 1
+Function: asorti(arr)
+
+Description: Sort array indices
+Command: awk 'BEGIN {a["c"]=1; a["a"]=2; asorti(a,b); print b[1]}'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN {a["c"]=1; a["a"]=2; asorti(a,b); print b[1]}'
+Output: a
+Function: typeof(var)
+
+Description: Get variable type
+Command: awk 'BEGIN { print typeof(42) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print typeof(42) }'
+Output: number
+Function: rand()
+
+Description: Random number (0-1)
+Command: awk 'BEGIN { print rand() }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print rand() }'
+Output: 0.237964
+Function: srand([seed])
+
+Description: Set random seed
+Command: awk 'BEGIN { srand(1); print rand() }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { srand(1); print rand() }'
+Output: 0.237964
+Function: and(x;y)
+
+Description: Bitwise AND
+Command: awk 'BEGIN { print and(12,10) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print and(12,10) }'
+Output: 8
+Function: or(x;y)
+
+Description: Bitwise OR
+Command: awk 'BEGIN { print or(12,10) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print or(12,10) }'
+Output: 14
+Function: xor(x;y)
+
+Description: Bitwise XOR
+Command: awk 'BEGIN { print xor(12,10) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print xor(12,10) }'
+Output: 6
+Function: compl(x)
+
+Description: Bitwise NOT
+Command: awk 'BEGIN { print compl(12) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print compl(12) }'
+Output: -13
+Function: lshift(x;n)
+
+Description: Left shift
+Command: awk 'BEGIN { print lshift(12,1) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print lshift(12,1) }'
+Output: 24
+Function: rshift(x;n)
+
+Description: Right shift
+Command: awk 'BEGIN { print rshift(12,1) }'
+Input_Data: None
+Command_to_Run: echo | awk 'BEGIN { print rshift(12,1) }'
+Output: 6
